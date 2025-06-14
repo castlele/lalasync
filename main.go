@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
+
+func songsHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Hello from songs!"))
+}
 
 func main() {
-	fmt.Println("Hello, World!")
+	http.HandleFunc("/songs", songsHandler)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
