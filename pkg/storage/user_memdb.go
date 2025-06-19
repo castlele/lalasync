@@ -1,6 +1,15 @@
 package storage
 
+import (
+	"maps"
+	"slices"
+)
+
 type UserMemDB map[string]*UserModel
+
+func (db UserMemDB) GetAll() []*UserModel {
+	return slices.Collect(maps.Values(db))
+}
 
 func (db UserMemDB) Get(key string) *UserModel {
 	if value, ok := db[key]; ok {

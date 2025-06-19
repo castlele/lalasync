@@ -17,10 +17,10 @@ const (
 )
 
 type authService struct {
-	repo *storage.UserRepo
+	repo storage.UserRepo
 }
 
-func NewAuthService(repo *storage.UserRepo) *authService {
+func NewAuthService(repo storage.UserRepo) *authService {
 	return &authService{repo: repo}
 }
 

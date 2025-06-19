@@ -60,6 +60,7 @@ package Lalasync {
             GetSongByName(songName string) SongModel
             GetUserSongs(userName string) []SongModel
             SetSongForUser(userName string, song SongModel) error
+            SetSongsForUser(userName string, songs []SongModel) error
         }
 
         object UserModel {
